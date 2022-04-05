@@ -1,0 +1,46 @@
+import streamlit as st
+
+st.write("""
+# Aplikasi luas segitiga
+ini apk yang dibuat pertamakali 
+(F:-> New folder (6)-> web-> streamlit-> firstpyw)
+""")
+# 
+alas = st.number_input("masukkan alas",0)
+tinggi = st.number_input("masukkan tinggi",0)
+# 2
+hitung = st.button("hitung luas")
+
+if hitung:
+    st.spinner(text="In progress...")
+
+    luas = 0.5 * alas * tinggi
+    # st.write("luas segitiganya adalah = ", luas)
+    st.success(f"luas segitiganya adalah {luas} ")
+    st.balloons()
+#
+
+#..................................................................................................
+import speech_recognition as sr
+
+engine = sr.Recognizer()
+mic = sr.Microphone()
+hasil = ""
+engine.pause_treshold = 2
+
+with mic as source:
+    print("~~ mulai deteksi ~~")
+    rekaman = engine.listen(source)
+    print("~~ deteksi suara ditutup ~~")
+    
+    try:
+        print(".")
+        hasil = engine.recognize_google(rekaman, language = "id")
+        print("..")
+        print(hasil)
+        print(". . .")
+    except engine.UnknownValueError:
+        print("google tidak mendeteksi")
+    except Exception as e:
+        print(e)
+        
