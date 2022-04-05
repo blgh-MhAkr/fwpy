@@ -1,5 +1,6 @@
 import streamlit as st
 import time
+import speech_recognition as sr
 
 st.write("""
 # Speech to text
@@ -15,7 +16,7 @@ hitung = st.button("rekam")
 if hitung:
     # st.spinner(text="In progress...")
     # -------------------------------
-    import speech_recognition as sr
+    # import speech_recognition as sr
 
     engine = sr.Recognizer()
     mic = sr.Microphone()
